@@ -682,7 +682,20 @@ with tabs[3]:
                 st.write(f"Loaded {len(prompts)} prompts")
 
     batch_model = st.selectbox("Model:", ALL_CHAT_MODELS, key="batch_model")
-    batch_workers = st.slider("Workers:", 1, max(num_keys, 1), num_keys, key="batch_workers")
+    # batch_workers = st.slider("Workers:", 1, max(num_keys, 1), num_keys, key="batch_workers")
+
+    if num_keys > 1:
+        batch_workers = st.slider(
+            "Workers:",
+            1,
+            num_keys,
+            num_keys,
+            key="batch_workers"
+        )
+    else:
+        batch_workers = 1
+        st.write("Only 1 worker available")
+
 
     if prompts:
         st.write(f"📋 {len(prompts)} prompts ready")
