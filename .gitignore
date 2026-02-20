@@ -1,0 +1,21 @@
+# Secrets - NEVER push these
+.streamlit/secrets.toml
+*.env
+.env
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Audio outputs
+*.wav
+*.mp3
+
+# Results
+groq_results_*
+batch_results*
+
+# IDE
+.vscode/
+.idea/
